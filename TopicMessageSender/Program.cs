@@ -12,7 +12,7 @@ namespace TopicMessageSender
     {
         static void Main(string[] args)
         {
-            var connString = "Endpoint=sb://customerdomainpr.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=wS99C3g1doEd0+rjabjkIdDo2iIHCk7yS+K6BrrsooQ=";
+            var connString = "<service bus connection string>";
             QueueClient client = new QueueClient(connString, "CustomerCreatedQueue");
             
             var customer = new Customer()
