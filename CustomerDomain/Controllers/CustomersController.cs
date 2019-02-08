@@ -34,11 +34,11 @@ namespace CustomerDomain.Controllers
         }
 
         // POST api/values
-        [HttpPost]
-        public ActionResult<Customer> Post([FromBody] Customer value)
-        {
-            return Ok(this.repo.AddCustomer(value).Result);
-        }
+        //[HttpPost]
+        //public ActionResult<Customer> Post([FromBody] Customer value)
+        //{
+        //    return Ok(this.repo.AddCustomer(value).Result);
+        //}
 
         // PUT api/values/5
         [HttpPut("{id}")]

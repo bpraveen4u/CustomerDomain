@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CustomerDomain.Commands;
 using CustomerWrite.Events;
 using CustomerWrite.Models;
 using CustomerWrite.Repository;
@@ -32,6 +33,7 @@ namespace CustomerWrite
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddEntityFrameworkSqlServer().AddDbContext<CustomerDomainContext>(option => option.UseSqlServer(Configuration["connectionStrings:CustomerRepo"]));
             services.AddScoped<ICustomerRepository, SqlCustomerRepository>();
+            services.AddScoped<ICommandHandler, CustomerCommandHandler>();
             services.AddScoped<IEventHandler, CustomerEventsListener>();
         }
 
